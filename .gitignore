@@ -3,10 +3,5 @@
 .VScode/
 **.o
 **.a
-RTv1
 **.DS_Store
 test/
-.VScode
-.vscode
-**.cpp
-**.xcf
