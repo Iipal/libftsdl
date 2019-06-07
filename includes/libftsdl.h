@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/04 19:04:27 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 19:16:29 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ extern void	sdl_free(Sdl **sdl);
 **	and if Surface doesnt exist too.
 */
 extern void	sdl_pixelput(SDL_Surface *surf,
-				const Dot p, const Color clr);
+				const __v2si p, const Color clr);
 
 SDL_Surface	*sdl_load_image(const char *restrict const path,
 				const SDL_PixelFormat *format,
