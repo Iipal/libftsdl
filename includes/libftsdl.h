@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 19:16:29 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/09 22:17:36 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,15 @@ SDL;
 **	\param height: Window height what will created.
 **	\param title: Title for window.
 */
-extern bool	sdl_init(Sdl *sdl,
+extern bool	sdl_init(Sdl *restrict const sdl,
 				const int32_t width,
 				const int32_t height,
 				const string title);
 
+extern bool	sdl_create_window_without_borders(Sdl *restrict const sdl,
+				const int32_t width,
+				const int32_t height,
+				const string title);
 /*
 **	Free all data in Sdl*.
 */
