@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/06/11 09:09:47 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/06/12 17:26:59 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ LC += rcs
 CC := gcc -march=native -mtune=native -Ofast -flto -pipe
 CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG
 CFLAGS := -Wall -Wextra -Werror -Wunused -Wno-type-limits -Wpedantic
-IFLAGS := -I ~/.brew/include -I $(CURDIR)/includes/ -I $(CURDIR)/../libft/includes
+IFLAGS := -I ~/.brew/include -I $(CURDIR)/includes/ -I $(CURDIR)/../libft/includes -I $(CURDIR)/../libvectors/includes
 
 SRCS := $(abspath $(wildcard srcs/*.c srcs/*/*.c srcs/*/*/*.c srcs/*/*/*/*.c))
 OBJS := $(SRCS:%.c=%.o)

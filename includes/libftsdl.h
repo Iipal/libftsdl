@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 22:17:36 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/12 17:26:25 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libftsdl_colors_math.h"
 # include "libftsdl_macroses.h"
 # include "libftsdl_errno.h"
+# include "libvectors.h"
 
 struct		s_sdl
 {
