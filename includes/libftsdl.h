@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/12 17:26:25 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/16 23:59:21 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ struct		s_sdl
 {
 	SDL_Window	*w;
 	SDL_Surface	*wsurf;
-	uiarr		pxls;
-	SDL_Event	e;
+	Uint32		*pxls;
 	TTF_Font	*font;
+	SDL_Event	e;
 };
 
 # define SDL typedef struct s_sdl Sdl
