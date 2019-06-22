@@ -25,7 +25,7 @@ LC += rcs
 
 CC := gcc -march=native -mtune=native -Ofast -flto -pipe
 CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG -fsanitize=address
-CFLAGS := -Wall -Wextra -Werror -Wunused -Wno-type-limits -Wpedantic
+CFLAGS := -Wall -Wextra -Werror -Wunused -Wno-type-limits
 IFLAGS := -I ~/.brew/include -I $(CURDIR)/includes/ -I $(CURDIR)/../libft/includes -I $(CURDIR)/../libvectors/includes
 
 SRCS := $(abspath $(wildcard srcs/*.c srcs/*/*.c srcs/*/*/*.c srcs/*/*/*/*.c))
