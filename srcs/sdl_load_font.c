@@ -6,15 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 19:15:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/29 11:29:20 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 13:01:14 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftsdl.h"
 
-SDL_Surface	*sdl_load_font(const Sdl *const sdl,
-				const char *restrict const text,
-				const SDL_Color text_color,
+SDL_Surface	*sdl_load_font(Sdl const *const sdl,
+				char const* text,
+				SDL_Color const text_color,
 				SDL_Surface *dst)
 {
 	SDL_Surface	*temp;

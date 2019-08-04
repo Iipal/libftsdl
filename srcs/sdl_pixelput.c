@@ -6,14 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 20:02:04 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 19:16:30 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 12:59:17 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftsdl.h"
 
-inline void	sdl_pixelput(SDL_Surface *surf, const __v2si p, const Color clr)
+void	sdl_pixelput(SDL_Surface *const surf,
+			__v2si const p, Color const clr)
 {
 	if (0 <= X(p) && 0 <= Y(p) && Y(p) < surf->h && X(p) < surf->w)
-		((uiarr)(surf->pixels))[Y(p) * surf->w + X(p)] = clr.hex;
+		((uint32_t*)(surf->pixels))[Y(p) * surf->w + X(p)] = clr.hex;
 }

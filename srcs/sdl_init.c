@@ -6,16 +6,16 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 22:23:52 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/09 22:17:42 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 12:57:20 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftsdl.h"
 
-inline bool	sdl_init(Sdl *restrict const sdl,
-				const int32_t width,
-				const int32_t height,
-				const string title)
+bool	sdl_init(Sdl *const sdl,
+				int32_t const width,
+				int32_t const height,
+				char const *title)
 {
 	IFM_F(SDL_GetError(), 0 > SDL_Init(SDL_INIT_EVENTS | SDL_INIT_VIDEO));
 	IFM_F(TTF_GetError(), 0 > TTF_Init());

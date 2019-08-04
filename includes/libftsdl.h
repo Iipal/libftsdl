@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/16 23:59:21 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/04 13:01:53 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ struct		s_sdl
 {
 	SDL_Window	*w;
 	SDL_Surface	*wsurf;
-	Uint32		*pxls;
+	uint32_t	*pxls;
 	TTF_Font	*font;
 	SDL_Event	e;
 };
@@ -38,19 +38,19 @@ SDL;
 **	\param height: Window height what will created.
 **	\param title: Title for window.
 */
-extern bool	sdl_init(Sdl *restrict const sdl,
-				const int32_t width,
-				const int32_t height,
-				const string title);
+bool		sdl_init(Sdl *const sdl,
+				int32_t const width,
+				int32_t const height,
+				char const *title);
 
-extern bool	sdl_create_window_without_borders(Sdl *restrict const sdl,
-				const int32_t width,
-				const int32_t height,
-				const string title);
+bool		sdl_create_window_without_borders(Sdl *const sdl,
+				int32_t const width,
+				int32_t const height,
+				char const *title);
 /*
 **	Free all data in Sdl*.
 */
-extern void	sdl_free(Sdl **sdl);
+void		sdl_free(Sdl **sdl);
 
 /*
 **	mlx_pixelput implementation on SDL2 for copy workflow from MLX library.
@@ -62,15 +62,15 @@ extern void	sdl_free(Sdl **sdl);
 **	Protected from segfault when x && y pixel doesnt exist on Surface,
 **	and if Surface doesnt exist too.
 */
-extern void	sdl_pixelput(SDL_Surface *surf,
-				const __v2si p, const Color clr);
+void		sdl_pixelput(SDL_Surface *const surf,
+				__v2si const p, Color const clr);
 
-SDL_Surface	*sdl_load_image(const char *restrict const path,
-				const SDL_PixelFormat *format,
+SDL_Surface	*sdl_load_image(char const *path,
+				SDL_PixelFormat const *format,
 				SDL_Surface *dst);
 SDL_Surface	*sdl_load_font(const Sdl *const sdl,
-				const char *restrict const text,
-				const SDL_Color text_color,
+				char const *text,
+				SDL_Color const text_color,
 				SDL_Surface *dst);
 
 #endif
