@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 13:01:53 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/07 20:02:31 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void		sdl_free(Sdl **sdl);
 **	\param y: Y position in surface->pixels.
 **	\param clr: Color which will set on \param x \param y position.
 **
-**	Protected from segfault when x && y pixel doesnt exist on Surface,
-**	and if Surface doesnt exist too.
+**	Protected from segfault when x && y pixel doesn't exist on Surface,
+**	and if Surface doesn't exist too.
 */
 void		sdl_pixelput(SDL_Surface *const surf,
 				__v2si const p, Color const clr);
