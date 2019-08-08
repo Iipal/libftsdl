@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 12:20:40 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/12 17:26:33 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/08 23:49:42 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,5 @@
 # define FPS_FONT "libftsdl/resources/fonts/04B_03__.TTF"
 
 # define CONVERT_FROM_CANVAS(x, y, win_x, win_y) (__v2si){x+win_x/2, y+win_y/2}
-
-# define SEKEY env->sdl->e.key.keysym.sym
 
 #endif
