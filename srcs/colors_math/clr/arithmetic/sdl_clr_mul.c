@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 23:14:28 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/19 11:24:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/09 12:09:16 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftsdl_colors_math.h"
 
-inline Color	sdl_clr_mul(Color src, const float_t mul)
+Color	sdl_clr_mul(Color const src, float_t const mul)
 {
 	Color	out;
 

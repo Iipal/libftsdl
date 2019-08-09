@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 18:56:44 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/05/19 11:23:23 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/09 12:07:26 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftsdl_colors_math.h"
 
-inline Color	sdl_clrs_div(Color src, const Color div)
+Color	sdl_clrs_div(Color const src, Color const div)
 {
 	Color	out;
 

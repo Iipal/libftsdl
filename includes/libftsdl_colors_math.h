@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 23:24:44 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 18:51:30 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/09 12:11:58 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,22 @@
 COLOR;
 FCOLOR;
 
-extern int32_t	sdl_clr_inrange(const int32_t color);
+Color	sdl_clr_bright_inc(Color const src, float_t const percent);
+Color	sdl_clr_bright_dec(Color const src, float_t const percent);
 
-extern Color	sdl_clr_bright_inc(Color src, const float_t percent);
-extern Color	sdl_clr_bright_dec(Color src, const float_t percent);
+Color	sdl_clr_add(Color const src, float_t const add);
+Color	sdl_clr_sub(Color const src, float_t const sub);
+Color	sdl_clr_div(Color const src, float_t const div);
+Color	sdl_clr_mul(Color const src, float_t const mul);
 
-extern Color	sdl_clr_div(Color src, const float_t div);
-extern Color	sdl_clr_mul(Color src, const float_t mul);
+Color	*sdl_clrs_gradient(Color const start, Color const end, size_t const n);
 
-Color			*sdl_clrs_gradient(Color start,
-					const Color end, const size_t len);
+Color	sdl_clrs_bright_inc(Color const c1, Color const c2, float_t const per);
+Color	sdl_clrs_bright_dec(Color const c1, Color const c2, float_t const per);
 
-extern Color	sdl_clrs_bright_inc(Color clr1,
-					const Color clr2, const float_t percent);
-extern Color	sdl_clrs_bright_dec(Color clr1,
-					const Color clr2, const float_t percent);
-
-extern Color	sdl_clrs_add(Color src, const Color add);
-extern Color	sdl_clrs_sub(Color src, const Color sub);
-extern Color	sdl_clrs_div(Color src, const Color div);
-extern Color	sdl_clrs_mul(Color src, const Color mul);
+Color	sdl_clrs_add(Color const src, Color const add);
+Color	sdl_clrs_sub(Color const src, Color const sub);
+Color	sdl_clrs_div(Color const src, Color const div);
+Color	sdl_clrs_mul(Color const src, Color const mul);
 
 #endif
