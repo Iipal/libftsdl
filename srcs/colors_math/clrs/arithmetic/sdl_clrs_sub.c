@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 18:59:32 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/09 12:07:10 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/09 13:54:48 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ Color	sdl_clrs_sub(Color const src, Color const sub)
 {
 	return ((Color){.c = (t_clr){.r = INRANGE(src.c.r - sub.c.r),
 								.g = INRANGE(src.c.g - sub.c.g),
-								.b = INRANGE(src.c.b - sub.c.b)} } );
+								.b = INRANGE(src.c.b - sub.c.b)} });
 }
