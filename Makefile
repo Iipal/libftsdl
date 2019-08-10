@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/06/12 21:16:00 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/08/11 01:09:20 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ endif
 LC += rcs
 
 CC := gcc -march=native -mtune=native -Ofast -flto -pipe
-CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG -fsanitize=address
+CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG
 CFLAGS := -Wall -Wextra -Werror -Wunused -Wno-type-limits
 IFLAGS := -I ~/.brew/include -I $(CURDIR)/includes/ -I $(CURDIR)/../libft/includes -I $(CURDIR)/../libvectors/includes
 
