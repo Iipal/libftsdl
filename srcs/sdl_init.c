@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 22:23:52 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 12:57:20 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/11 01:05:01 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ bool	sdl_init(Sdl *const sdl,
 		SDL_DestroyWindow(sdl->w), false);
 	IFDOM(E_SURFPXL, !(sdl->pxls = sdl->wsurf->pixels),
 		SDL_DestroyWindow(sdl->w));
-	IFDOM(TTF_GetError(), !(sdl->font = TTF_OpenFont(FPS_FONT, 20)),
+	IFDOM(TTF_GetError(), !(sdl->font = TTF_OpenFont(FPS_FONT, FPS_FONT_SIZE)),
 		SDL_DestroyWindow(sdl->w));
 	return (true);
 }
