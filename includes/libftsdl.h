@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/07 20:02:31 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/10 09:25:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,21 @@ bool		sdl_create_window_without_borders(Sdl *const sdl,
 void		sdl_free(Sdl **sdl);
 
 /*
-**	mlx_pixelput implementation on SDL2 for copy workflow from MLX library.
+**	mlx_pixelput implementation on SDL2 for copy workflow from MLX library:
 **	\param surf: Surface in which will set color \param clr.
 **	\param x: X position in surface->pixels.
 **	\param y: Y position in surface->pixels.
-**	\param clr: Color which will set on \param x \param y position.
+**	\param clr: Color which will set on
+**	 \param x \param y position in \param surf.
 **
-**	Protected from segfault when x && y pixel doesn't exist on Surface,
-**	and if Surface doesn't exist too.
+**	Protected if \param surf doesn't exit and from segfault when position
+**	 \param x && \param y isn't on \param surf.
 */
 void		sdl_pixelput(SDL_Surface *const surf,
 				__v2si const p, Color const clr);
 
-SDL_Surface	*sdl_load_image(char const *path,
-				SDL_PixelFormat const *format,
-				SDL_Surface *dst);
+SDL_Surface	*sdl_load_image(char const *path, SDL_PixelFormat const *format);
 SDL_Surface	*sdl_load_font(const Sdl *const sdl,
 				char const *text,
-				SDL_Color const text_color,
-				SDL_Surface *dst);
-
+				SDL_Color const text_color);
 #endif

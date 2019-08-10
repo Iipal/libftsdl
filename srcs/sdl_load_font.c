@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 19:15:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/09 13:53:08 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/10 09:24:58 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 SDL_Surface	*sdl_load_font(Sdl const *const sdl,
 				char const *text,
-				SDL_Color const text_color,
-				SDL_Surface *dst)
+				SDL_Color const text_color)
 {
+	SDL_Surface	*out;
 	SDL_Surface	*temp;
 
 	temp = NULL;
-	dst = NULL;
+	out = NULL;
 	NOM_R(TTF_GetError(),
 		temp = TTF_RenderText_Solid(sdl->font, text, text_color), NULL);
 	NOM_R(SDL_GetError(),
-		dst = SDL_ConvertSurface(temp, sdl->wsurf->format, 0), NULL);
+		out = SDL_ConvertSurface(temp, sdl->wsurf->format, 0), NULL);
 	SDL_FreeSurface(temp);
-	return (dst);
+	return (out);
 }
