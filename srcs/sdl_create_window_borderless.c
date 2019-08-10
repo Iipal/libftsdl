@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sdl_create_window_without_borders.c                :+:      :+:    :+:   */
+/*   sdl_create_window_borderless.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 22:16:18 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/04 12:56:09 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/10 11:26:23 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftsdl.h"
 
-bool	sdl_create_window_without_borders(Sdl *const sdl,
+bool	sdl_create_window_borderless(Sdl *const sdl,
 			int32_t const width,
 			int32_t const height,
 			char const *title)

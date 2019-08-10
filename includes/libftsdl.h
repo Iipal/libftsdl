@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/10 09:25:12 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/10 11:26:11 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ bool		sdl_init(Sdl *const sdl,
 				int32_t const height,
 				char const *title);
 
-bool		sdl_create_window_without_borders(Sdl *const sdl,
+bool		sdl_create_window_borderless(Sdl *const sdl,
 				int32_t const width,
 				int32_t const height,
 				char const *title);
