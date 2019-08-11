@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/08/11 01:09:20 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/08/11 16:05:59 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,12 @@ endif
 
 LC += rcs
 
-CC := gcc -march=native -mtune=native -Ofast -flto -pipe
-CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG
+CC_BASE := gcc -march=native -mtune=native
+
+CC := $(CC_BASE) -Ofast -pipe -flto
+CC_DEBUG := $(CC_BASE) -g3 -D DEBUG
+CC_PROFILE := $(CC_BASE) -no-pie -pg -O0
+
 CFLAGS := -Wall -Wextra -Werror -Wunused -Wno-type-limits
 IFLAGS := -I ~/.brew/include -I $(CURDIR)/includes/ -I $(CURDIR)/../libft/includes -I $(CURDIR)/../libvectors/includes
 
@@ -66,6 +70,13 @@ debug_all: set_cc_debug pre
 	@echo "$(INVERT)$(NAME) $(GREEN)ready for debug.$(WHITE)"
 debug: set_cc_debug all
 	@echo "$(INVERT)$(NAME) $(GREEN)ready for debug.$(WHITE)"
+
+set_cc_profle:
+	@$(eval CC=$(CC_PROFILE))
+profile_all: set_cc_profle pre
+	@echo "$(INVERT)$(NAME) $(GREEN)ready for profile.$(WHITE)"
+profile: set_cc_profle all
+	@echo "$(INVERT)$(NAME) $(GREEN)ready for profile.$(WHITE)"
 
 clean:
 	@$(DEL) $(OBJS)
