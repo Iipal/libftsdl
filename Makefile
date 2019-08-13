@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/08/11 16:05:59 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/08/13 09:34:32 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,10 @@ CC_DEBUG := $(CC_BASE) -g3 -D DEBUG
 CC_PROFILE := $(CC_BASE) -no-pie -pg -O0
 
 CFLAGS := -Wall -Wextra -Werror -Wunused -Wno-type-limits
-IFLAGS := -I ~/.brew/include -I $(CURDIR)/includes/ -I $(CURDIR)/../libft/includes -I $(CURDIR)/../libvectors/includes
+IFLAGS := -I ~/.brew/include \
+	-I $(CURDIR)/includes/ \
+	-I $(CURDIR)/../libft/includes \
+	-I $(CURDIR)/../libvectors
 
 SRCS := $(abspath $(wildcard srcs/*.c srcs/*/*.c srcs/*/*/*.c srcs/*/*/*/*.c))
 OBJS := $(SRCS:%.c=%.o)
