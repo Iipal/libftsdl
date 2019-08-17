@@ -6,14 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 23:24:44 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/09 12:11:58 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/17 18:08:29 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTSDL_COLORS_MATH_H
 # define LIBFTSDL_COLORS_MATH_H
 
-# include "libft.h"
 # include "libftsdl_colors_math_structs.h"
 # include "libftsdl_colors_math_macroses.h"
 

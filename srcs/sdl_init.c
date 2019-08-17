@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 22:23:52 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/11 01:05:01 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/17 15:54:59 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,23 @@ bool	sdl_init(Sdl *const sdl,
 				int32_t const height,
 				char const *title)
 {
-	IFM_F(SDL_GetError(), 0 > SDL_Init(SDL_INIT_EVENTS | SDL_INIT_VIDEO));
-	IFM_F(TTF_GetError(), 0 > TTF_Init());
-	IFM_F(IMG_GetError(), 0 > IMG_Init(IMG_INIT_JPG));
-	NOM_F(SDL_GetError(),
-		sdl->w = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,
-		SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN));
-	NO(SDL_GetError(), sdl->wsurf = SDL_GetWindowSurface(sdl->w),
-		SDL_DestroyWindow(sdl->w), false);
-	IFDOM(E_SURFPXL, !(sdl->pxls = sdl->wsurf->pixels),
-		SDL_DestroyWindow(sdl->w));
-	IFDOM(TTF_GetError(), !(sdl->font = TTF_OpenFont(FPS_FONT, FPS_FONT_SIZE)),
-		SDL_DestroyWindow(sdl->w));
-	return (true);
+	if (0 > SDL_Init(SDL_INIT_EVERYTHING))
+	{
+		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s\n", SDL_GetError());
+		return false;
+	}
+	if (0 > TTF_Init())
+	{
+		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s\n", TTF_GetError());
+		return false;
+	}
+	if (0 > IMG_Init(IMG_INIT_JPG))
+	{
+		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s\n", IMG_GetError());
+		return false;
+	}
+	;
+	if (!sdl_create_window_borderless(sdl, width, height, title))
+		return false;
+	return true;
 }

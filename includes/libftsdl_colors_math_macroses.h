@@ -6,14 +6,12 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 12:22:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/02 00:20:45 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/17 18:08:45 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTSDL_COLORS_MATH_MACROSES_H
 # define LIBFTSDL_COLORS_MATH_MACROSES_H
-
-# include "libft_macroses.h"
 
 # define COLOR_MAX  255
 # define COLOR_MIN  0

@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/08/13 09:34:32 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/08/17 15:16:29 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,7 @@ CC_PROFILE := $(CC_BASE) -no-pie -pg -O0
 CFLAGS := -Wall -Wextra -Werror -Wunused -Wno-type-limits
 IFLAGS := -I ~/.brew/include \
 	-I $(CURDIR)/includes/ \
-	-I $(CURDIR)/../libft/includes \
-	-I $(CURDIR)/../libvectors
+	-I $(CURDIR)/../vectors
 
 SRCS := $(abspath $(wildcard srcs/*.c srcs/*/*.c srcs/*/*/*.c srcs/*/*/*/*.c))
 OBJS := $(SRCS:%.c=%.o)
