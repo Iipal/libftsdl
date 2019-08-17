@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 12:22:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/17 18:08:45 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/17 19:18:10 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@
 
 # define INRANGE_MIN(c)	((COLOR_MIN > (c)) ? COLOR_MIN : (c))
 # define INRANGE(c)	((COLOR_MAX < (c)) ? COLOR_MAX : INRANGE_MIN(c))
+
+# define CLR_TO_REAL(p) (INRANGE(COLOR_MAX * (p)))
 
 # define SDL_CLRS_SWAP(a, b) SWAP(a, b)
 
