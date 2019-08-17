@@ -3,11 +3,6 @@
 
 My simple library for work with SDL2 and with colors math on C.
 
-### Addiitonal pre-installation:
-
-#### __libft__
-You must to clone [libft](https://github.com/Iipal/lft) & [libvectors](https://github.com/Iipal/libvectors) to the same folder with libftsdl.
-
 #### __SDL2__
 
 __Ubuntu:__
