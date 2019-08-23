@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/25 11:27:37 by tmaluh            #+#    #+#              #
-#    Updated: 2019/08/17 15:16:29 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/08/19 13:40:04 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ CC_PROFILE := $(CC_BASE) -no-pie -pg -O0
 
 CFLAGS := -Wall -Wextra -Werror -Wunused -Wno-type-limits
 IFLAGS := -I ~/.brew/include \
-	-I $(CURDIR)/includes/ \
-	-I $(CURDIR)/../vectors
+		-I $(CURDIR)/includes/ \
+		-I $(shell find ~ -name "libvectors.h" -print -quit | rev | cut -c13- | rev)
 
 SRCS := $(abspath $(wildcard srcs/*.c srcs/*/*.c srcs/*/*/*.c srcs/*/*/*/*.c))
 OBJS := $(SRCS:%.c=%.o)
