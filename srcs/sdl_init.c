@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 22:23:52 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/17 15:54:59 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/23 22:32:14 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,30 @@ bool	sdl_init(Sdl *const sdl,
 				int32_t const height,
 				char const *title)
 {
+	bool	ret = true;
+
 	if (0 > SDL_Init(SDL_INIT_EVERYTHING))
 	{
-		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s\n", SDL_GetError());
-		return false;
+		SDL_Log("%s\n", SDL_GetError());
+		ret = false;
 	}
 	if (0 > TTF_Init())
 	{
-		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s\n", TTF_GetError());
-		return false;
+		SDL_Log("%s\n", TTF_GetError());
+		ret = false;
+	}
+	sdl->font = TTF_OpenFont(FPS_FONT, FPS_FONT_SIZE);
+	if (!sdl->font)
+	{
+		SDL_Log("%s\n", TTF_GetError());
+		ret = false;
 	}
 	if (0 > IMG_Init(IMG_INIT_JPG))
 	{
-		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s\n", IMG_GetError());
-		return false;
+		SDL_Log("%s\n", IMG_GetError());
+		ret = false;
 	}
-	;
 	if (!sdl_create_window_borderless(sdl, width, height, title))
-		return false;
-	return true;
+		ret = false;
+	return ret;
 }

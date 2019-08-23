@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 11:05:18 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/17 15:34:55 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/23 22:32:01 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ SDL_Surface	*sdl_load_image(char const *path, SDL_PixelFormat const *format)
 	out = NULL;
 	if (!temp)
 	{
-		SDL_LogError(SDL_LOG_CATEGORY_ERROR,"%s\n", IMG_GetError());
+		SDL_Log("%s\n", TTF_GetError());
 		return out;
 	}
 	out = SDL_ConvertSurface(temp, format, 0);
 	if (!out)
-		SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s\n", SDL_GetError());
+		SDL_Log("%s\n", SDL_GetError());
 	SDL_FreeSurface(temp);
 	return (out);
 }
