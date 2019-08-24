@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sdl_create_window_borderless.c                     :+:      :+:    :+:   */
+/*   sdl_create_window.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/09 22:16:18 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/24 14:13:34 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/08/24 14:13:26 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/08/24 14:14:07 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftsdl.h"
 
-bool	sdl_create_window_borderless(Sdl *const sdl,
+bool	sdl_create_window(Sdl *const sdl,
 			int32_t const width,
 			int32_t const height,
 			char const *title)
@@ -20,7 +20,7 @@ bool	sdl_create_window_borderless(Sdl *const sdl,
 	if (sdl->w)
 		SDL_DestroyWindow(sdl->w);
 	if (!(sdl->w = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,
-				SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_BORDERLESS)))
+				SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL)))
 		return false;
 	if (!(sdl->wsurf = SDL_GetWindowSurface(sdl->w)))
 	{

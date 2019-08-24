@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 19:59:09 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/17 18:08:35 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 16:48:35 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,20 @@ SDL;
 bool		sdl_init(Sdl *const sdl,
 				int32_t const width,
 				int32_t const height,
-				char const *title);
+				char const *title) __nonnull((1,4));
 
+bool		sdl_create_window(Sdl *const sdl,
+				int32_t const width,
+				int32_t const height,
+				char const *title) __nonnull((1,4));
 bool		sdl_create_window_borderless(Sdl *const sdl,
 				int32_t const width,
 				int32_t const height,
-				char const *title);
+				char const *title) __nonnull((1,4));
 /*
 **	Free all data in Sdl*.
 */
-void		sdl_free(Sdl **sdl);
+void		sdl_free(Sdl **sdl)  __nonnull((1));
 
 /*
 **	mlx_pixelput implementation on SDL2 for copy workflow from MLX library:
@@ -64,10 +68,10 @@ void		sdl_free(Sdl **sdl);
 **	 \param x && \param y isn't on \param surf.
 */
 void		sdl_pixelput(SDL_Surface *const surf,
-				__v2si const p, Color const clr);
+				__v2si const p, Color const clr) __nonnull((1));
 
-SDL_Surface	*sdl_load_image(char const *path, SDL_PixelFormat const *format);
+SDL_Surface	*sdl_load_image(char const *path, SDL_PixelFormat const *format) __nonnull((1,2));
 SDL_Surface	*sdl_load_font(const Sdl *const sdl,
 				char const *text,
-				SDL_Color const text_color);
+				SDL_Color const text_color) __nonnull((1,2));
 #endif

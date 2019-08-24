@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 22:23:52 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/23 22:32:14 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/08/24 14:14:43 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ bool	sdl_init(Sdl *const sdl,
 		SDL_Log("%s\n", IMG_GetError());
 		ret = false;
 	}
-	if (!sdl_create_window_borderless(sdl, width, height, title))
+	if (!sdl_create_window(sdl, width, height, title))
 		ret = false;
 	return ret;
 }
