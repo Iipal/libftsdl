@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 12:20:40 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/09/02 21:51:37 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/10/26 12:25:04 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,11 @@
 
 # define CONVERT_FROM_CANVAS(x, y, win_x, win_y) (__v2si){x+win_x/2, y+win_y/2}
 # define D_FROM_CANVAS(x, y, wx, wy) (t_v2df){(x)+((wx)/2),(y)+((wy)/2)}
+
+# ifndef __APPLE__
+#  define NON_NULL(p) __nonnull(p)
+# else
+#  define NON_NULL(p)
+# endif
 
 #endif
