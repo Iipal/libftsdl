@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 22:37:40 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/08/17 15:18:00 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/11/05 12:20:21 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftsdl.h"
 
-void	sdl_free(Sdl **sdl)
+void	sdl_free(Sdl **restrict sdl)
 {
 	if (*sdl)
 	{
